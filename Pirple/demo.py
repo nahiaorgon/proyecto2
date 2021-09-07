@@ -1,21 +1,11 @@
 from flask import Flask, render_template, request, session, redirect, url_for, g
-from flask import *
-from flask_mail import *
-
+from flask import * 
 
 import primerdatamodel
 import sqlite3
 
 app = Flask(__name__)
 app.secret_key = 'jumpjacks'
-mail= Mail(app)
-
-app.config['MAIL_SERVER'] ='smtp.gmail.com'
-app.config['MAIL_PORT '] = 587
-app.config['MAIL_USERNAME'] = 'naahiiaariittaa@gmail.com'
-app.config['MAIL_PASSWORD'] = 'visheriita-.-'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
 
 user = primerdatamodel.check_users()
 
